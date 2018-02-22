@@ -138,12 +138,27 @@ a:hover{
 	border-top: thin solid black;
 	position: absolute;
 	bottom: 0;
+	background-color: #3D9970;
 }
 .enterDivText{
 	font-family: 'OstrichSansRounded-Medium';
 	font-size: 2em;
 	text-align: center;
+	color: white;
 }
 .enterDiv:hover{
-	background-color: gray;
+	background-color: black;
+}
+.divTitle{
+	font-family: "OstrichSans-black";
+	font-size: 1.5em;
+	text-align: center;
+	padding: .5em;
+}
+.divText{
+	text-align: center;
+	padding-bottom: .5em;
+}
+.alignText{
+	margin-top: 1em;
 }
