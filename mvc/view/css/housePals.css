@@ -1,0 +1,149 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ^ ---------------CSS RESET--------------- ^ */
+@font-face{
+    font-family: 'OstrichSans-Black';
+    src: url(fonts/OstrichSans-Black.otf) format("opentype");
+}
+@font-face{
+    font-family: 'OstrichSansRounded-Medium';
+    src: url(fonts/OstrichSansRounded-Medium.otf) format("opentype");
+}
+body{
+	margin: 0 10% 0 10%;
+}
+#loginDiv{
+    width: 20em;
+    height: auto;
+    margin: 2em;
+    padding: 2em 2em 2em 2em;
+    border: thin solid black;
+}
+#headerDiv{
+	height: 2em;
+	width: 100%;
+	border-top: thin solid black;
+	border-bottom: thin solid black;
+	background-color: #3D9970;
+	margin: .4em 0 .4em 0;
+	padding: .4em 0 .7em 0;
+	display: flex;
+	justify-content: space-between;
+}
+#footerDiv{
+	height: 2em;
+	width: 100%;
+	margin-top: .5em;
+	border-top: thin solid black;
+	border-bottom: thin solid black;
+	background-color: #3D9970;
+}
+#heading{
+	font-size: 2.5em;
+	vertical-align: 0;
+	padding-left: .5em;
+	font-family: 'OstrichSans-Black';
+}
+#navigation{
+	padding: .2em 0 0 .5em;
+	font-family: 'OstrichSansRounded-Medium';
+	font-size: 1.5em;
+}
+a{
+	text-decoration: none;
+	font-size: 1.15em;
+	padding: 0 .3em 0 .3em;
+	color: mintcream;
+}
+a:hover{
+	color: black;
+}
+#topRow{
+	display: flex;
+	justify-content: center;
+}
+#container{
+	width: 100%;
+	height: auto;
+	border: thin solid black;
+}
+.smallRow{
+	height: 10em;
+	width: 47%;
+	margin: .5em;
+	border: thin solid black;
+	background-color: lightgrey;
+	position: relative;
+}
+#middleRow{
+	display: flex;
+	justify-content: center;
+}
+#bottomRow{
+	display: flex;
+	justify-content: center;
+}
+.largeRow{
+	height: 20em;
+	width: 47%;
+	margin: .5em;
+	border: thin solid black;
+	background-color: lightgrey;
+	position: relative;
+}
+.enterDiv{
+	height: 2em;
+	width: 100%;
+	border-top: thin solid black;
+	position: absolute;
+	bottom: 0;
+}
+.enterDivText{
+	font-family: 'OstrichSansRounded-Medium';
+	font-size: 2em;
+	text-align: center;
+}
+.enterDiv:hover{
+	background-color: gray;
+}
