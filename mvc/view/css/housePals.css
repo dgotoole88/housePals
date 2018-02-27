@@ -176,25 +176,32 @@ a:hover{
 .loginInputs{
 	width: 100%;
 	height: auto;
-	display: flex;
-	justify-content: center;
 	padding: .5em;
 }
 input{
-	line-height: 20px;
 	font-size: 1.25em;
+	float: right;
 }
 .inputLabel{
 	padding-right: .8em;
 	font-size: 1.5em;
-	vertical-align: middle;
 	font-family: "OstrichSansRounded-Medium";
 }
 #inputContainer{
 	margin: 3em 0 3em 0;
+	display: flex;
+	justify-content: center;
 }
 #registerContainer{
 	width: 100%;
 	height: auto;
 	border: thin solid black;
+}
+#alignContainers{
+	width: 22.5em;
+}
+#submitButton{
+	padding: 2em;
+	display: flex;
+	justify-content: center;
 }

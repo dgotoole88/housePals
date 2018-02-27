@@ -10,14 +10,19 @@
     <body>
         <div id="loginContainer">
             <div id="inputContainer">   
-                <h2 class="loginRegister">Login</h2>
-                <div class="loginInputs">
-                    <span class="inputLabel">Username</span>
-                    <input type="text" name="username">
-                </div>
-                <div class="loginInputs">
-                    <span class="inputLabel">Password</span>
-                    <input type="text" name="password">
+                <div id="alignContainers">
+                    <h2 class="loginRegister">Login</h2>
+                    <div class="loginInputs">
+                        <span class="inputLabel">Username</span>
+                        <input type="text" name="username">
+                    </div>
+                    <div class="loginInputs">
+                        <span class="inputLabel">Password</span>
+                        <input type="text" name="password">
+                    </div>
+                    <div id="submitButton">
+                        <button type="submit" name="submit" value="submit">Login</button>
+                    </div>
                 </div>
             </div>
         </div>

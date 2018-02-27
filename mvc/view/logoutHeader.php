@@ -10,7 +10,7 @@
                 <h1 id="heading">House Pals</h1>
             </div>
             <div id="navigation">
-                <a href="">Register</a>
+                <a href="view/register.php">Register</a>
             </div>
         </header>
         <footer>
