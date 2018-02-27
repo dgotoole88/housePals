@@ -162,3 +162,39 @@ a:hover{
 .alignText{
 	margin-top: 1em;
 }
+#loginContainer{
+	width: 100%;
+	height: auto;
+	border: thin solid black;
+}
+.loginRegister{
+	font-family: "OstrichSans-black";
+	font-size: 1.5em;
+	text-align: center;
+	margin: .5em;
+}
+.loginInputs{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	padding: .5em;
+}
+input{
+	line-height: 20px;
+	font-size: 1.25em;
+}
+.inputLabel{
+	padding-right: .8em;
+	font-size: 1.5em;
+	vertical-align: middle;
+	font-family: "OstrichSansRounded-Medium";
+}
+#inputContainer{
+	margin: 3em 0 3em 0;
+}
+#registerContainer{
+	width: 100%;
+	height: auto;
+	border: thin solid black;
+}
