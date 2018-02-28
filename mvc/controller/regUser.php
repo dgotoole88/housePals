@@ -14,6 +14,9 @@
     }
 
     if(isset($_POST) & !empty($_POST)){
+        $houseName = filter_var(test_Reginput($_POST['newHouseName']), FILTER_SANITIZE_STRING);
+        $housePass = filter_var(test_Reginput($_POST['newHousePassword']), FILTER_SANITIZE_STRING);
+
         $username = filter_var(test_Reginput($_POST['username']), FILTER_SANITIZE_STRING);
         $password = filter_var(test_Reginput($_POST['password']), FILTER_SANITIZE_STRING);
         $firstName = filter_var(test_Reginput($_POST['firstName']), FILTER_SANITIZE_STRING);
@@ -37,8 +40,8 @@
             $response['message'] = 'This was successful';   // Set message status
     
             if($resultLogin){
-                $sqlTourist = "INSERT INTO user (firstName, surname, email, dob, profilePic, loginID, houseID) VALUES ('$firstName', '$surname', '$email', '../View/images/profilePictures/unknown.jpg', (SELECT loginID FROM login WHERE username='$username'))";
-                $result = $pdo->query($sqlTourist);
+                $sqlUser = "INSERT INTO user (firstName, surname, email, dob, profilePic, loginID, houseID) VALUES ('$firstName', '$surname', '$email', '$dob', '../view/images/profilePic/unknown.jpg', (SELECT loginID FROM login WHERE username='$username'), (SELECT houseID from house WHERE houseName = '$houseName'))";
+                $result = $pdo->query($sqlUser);
                 if($result){
                     $response['status'] = 'Success';                // Set response status
                     $response['message'] = 'This was successful';   // Set message status
@@ -57,6 +60,4 @@
         }
         echo json_encode($response);    // echo response as json
     }
-?>
-
 ?>

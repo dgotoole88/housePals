@@ -184,7 +184,7 @@ input{
 }
 .inputLabel{
 	padding-right: .8em;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	font-family: "OstrichSansRounded-Medium";
 }
 #inputContainer{
@@ -201,6 +201,7 @@ input{
 	width: 22.5em;
 }
 #submitButton{
+	width: 100%;
 	padding: 2em;
 	display: flex;
 	justify-content: center;
