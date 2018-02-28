@@ -205,3 +205,37 @@ input{
 	display: flex;
 	justify-content: center;
 }
+#errorText{
+	font-family: "OstrichSansRounded-Medium";
+	font-size: 1.5em;
+	color: white;
+}
+#errorModal{
+	background-color: red;
+	opacity: .7;
+	text-align: center;
+	display: none;
+}
+.buttonText{
+	font-family: "OstrichSansRounded-Medium";
+	font-size: 1.5em;
+	background-color: #3D9970;
+	color: white;
+	margin: 0 1em 0 1em;
+}
+.butts{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	padding: 1em;
+}
+#regPageFour{
+	display: none;
+}
+#regCreate{
+	display: none;
+}
+#regExist{
+	display: none;
+}
