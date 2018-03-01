@@ -31,7 +31,7 @@
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Password</span>
-                            <input type="text" id="newHousePassword" name="newHousePassword">
+                            <input type="password" id="newHousePassword" name="newHousePassword">
                         </div>
                         <div class="butts">
                             <input class="buttonText" type="button" value="Back" onclick="createBack()">
@@ -41,12 +41,12 @@
 
                     <div id="regExist">
                         <div class="loginInputs">
-                            <span class="inputLabel">House mmName</span>
-                            <input type="text" name="existingHouseName">
+                            <span class="inputLabel">House Name</span>
+                            <input type="text" id="existingHouseName" name="existingHouseName">
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Password</span>
-                            <input type="text" name="existingHousePass">
+                            <input type="password" id="existingHousePass" name="existingHousePass">
                         </div>
                         <div class="butts">
                             <input class="buttonText" type="button" value="Back" onclick="existBack()">
@@ -61,7 +61,7 @@
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Password</span>
-                            <input type="text" id="password" name="password">
+                            <input type="password" id="password" name="password">
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">First name</span>
@@ -86,6 +86,20 @@
                     </div>
                 </div>
             </form>
+            <div id="reportDivs">
+                <div id="registrationSuccessDiv">
+                    <h2 id="responseText">Successfully Registered</h2>
+                </div>
+                <div id="regoTakenLogin">
+                    <h2 id="responseText">Username Taken</h2>
+                </div>
+                <div id="regoTakenHouse">
+                    <h2 id="responseText">House Name Taken</h2>
+                </div>
+                <div id="regoError">
+                    <h2 id="responseText">Error, Try Again</h2>
+                </div>
+            </div>
         </div>
         <footer><?php include "footer.php"; ?></footer>
     </body>

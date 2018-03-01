@@ -2,6 +2,9 @@ function submit() {
     $("#submit").click(function(e) {
         
         // Set all variables
+        var existingHouseName = $('#existingHouseName').val();
+        var existingHousePass = $('#existingHousePass').val();
+
         var newHouseName = $('#newHouseName').val();
         var newHousePassword = $('#newHousePassword').val();
 
@@ -12,14 +15,16 @@ function submit() {
         var email = $('#email').val();
         var dob = $('#dob').val();
 
-        checkUser(newHouseName, newHousePassword, username, password, firstName, surname, email, dob);
+     //   checkUser(newHouseName, newHousePassword, username, password, firstName, surname, email, dob);
   
-        function checkUser(newHouseName, newHousePassword, username, password, firstName, surname, email, dob) {
+    //    function checkUser(newHouseName, newHousePassword, username, password, firstName, surname, email, dob) {
             $.ajax({
                 type: 'POST',
                 datatype: 'json',
                 url: '../controller/regUser.php',
                 data: {
+                    existingHousePass: existingHousePass,
+                    existingHouseName: existingHouseName,
                     newHouseName: newHouseName,
                     newHousePassword: newHousePassword,
                     username: username,
@@ -31,24 +36,37 @@ function submit() {
                 },
                 success: function(data) {
                     console.log(data);
-                    if (data.status == 'Success') {
-                        alert("success");
+                    if (data.status == 'success') {
+                        document.getElementById("registrationSuccessDiv").style.display = "block";
+                        document.getElementById("regoError").style.display = "none";
+                        document.getElementById("regoTakenLogin").style.display = "none";
+                        document.getElementById("regoTakenHouse").style.display = "none";
+                        username.val = "";
                     }
-                    if (data.status == 'Error') {
-                        alert("error");
+                    if (data.status == 'error') {
+                        document.getElementById("regoError").style.display = "block";
+                        document.getElementById("regoTakenLogin").style.display = "none";
+                        document.getElementById("regoTakenHouse").style.display = "none";
                     }
-                    if (data.status == 'Taken') {
-                        alert("Taken");
+                    if (data.status == "loginTaken"){
+                        document.getElementById("regoTakenLogin").style.display = "block";
+                        document.getElementById("regoTakenHouse").style.display = "none";
+                        document.getElementById("regoError").style.display = "none";
+                    }
+                    if (data.status == 'houseTaken') {
+                        document.getElementById("regoTakenHouse").style.display = "block";
+                        document.getElementById("regoTakenLogin").style.display = "none";
+                        document.getElementById("regoError").style.display = "none";
                     }
                 },
                 error: function() {
                     console.log("Signup was unsuccessful");
-                    if (data.status == 'Error') {
-                        alert("Error");
+                    if (data.status == 'error') {
+
                     }
                 }
             });
-        }
+      //  }
     });
   }
   

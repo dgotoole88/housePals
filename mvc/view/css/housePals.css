@@ -240,3 +240,46 @@ input{
 #regExist{
 	display: none;
 }
+#registrationSuccessDiv{
+	width: 100%;
+	text-align: center;
+	background-color: lightgreen;
+	color: black;
+	display: none;
+	position: absolute;
+	bottom: 0;
+}
+#regoTakenLogin{
+	width: 100%;
+	text-align: center;
+	background-color: lightcoral;
+	color: black;
+	display: none;
+	position: absolute;
+	bottom: 0;
+}
+#regoTakenHouse{
+	width: 100%;
+	text-align: center;
+	background-color: lightcoral;
+	color: black;
+	display: none;
+	position: absolute;
+	bottom: 0;
+}
+#regoError{
+	width: 100%;
+	text-align: center;
+	background-color: lightcoral;
+	color: black;
+	display: none;
+	position: absolute;
+	bottom: 0;
+}
+#responseText{
+	font-family: "OstrichSansRounded-Medium";
+	font-size: 1.5em;
+}
+#reportDivs{
+	position: relative;
+}
