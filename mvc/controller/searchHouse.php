@@ -32,7 +32,7 @@
         // Statement is true if the entered username and house name have not been taken
         if($countHouseName == 1){
 
-            $hashedPass = "SELECT housePassword FROM house WHERE houseName= '$existingHouseName'";
+            $hashedPass = "SELECT housePassword FROM house WHERE houseName = '$existingHouseName'";
             $hashResult = $pdo->query($hashedPass);
             $hashReturn = $hashResult->fetchColumn();
 
@@ -42,7 +42,7 @@
 
                 $_SESSION['houseFound'] = 1;
             }else{
-                $response['status'] = 'Error';                    // Set response status
+                $response['status'] = 'error';                    // Set response status
                 $response['message'] = 'Incorrect details';       // Set message status
 
                 $_SESSION['houseFound'] = 0;
@@ -51,6 +51,7 @@
         }else{
             $response['status'] = 'error';                // Set response status
             $response['message'] = 'House not found';     // Set message status
+            $_SESSION['houseFound'] = 0;
         }
 
         // echo response as json

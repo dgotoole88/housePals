@@ -15,9 +15,14 @@ function searchHouse(){
             success: function(data) {
                 console.log(data);
                 if (data.status == 'houseFound') {
-                    document.getElementById("houseFound").style.display = "block";
-                    document.getElementById("nextSearch").style.display = "block";
+                    document.getElementById("houseSearch").style.display = "block";
                     document.getElementById("searchHouse").style.display = "none";
+                    document.getElementById("next").style.display = "block";
+                    document.getElementById("regoError").style.display = "none";
+                }
+                if (data.status == 'error') {
+                    document.getElementById("regoError").style.display = "block";
+                    document.getElementById("houseSearch").style.display = "none";
                 }
             },
             error: function() {

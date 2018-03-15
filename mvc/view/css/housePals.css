@@ -231,6 +231,13 @@ input{
 	justify-content: center;
 	padding: 1em;
 }
+#searchButts{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	padding: 1em;
+}
 #regPageFour{
 	display: none;
 }
@@ -238,6 +245,18 @@ input{
 	display: none;
 }
 #regExist{
+	display: none;
+}
+#houseSearch{
+	width: 100%;
+	text-align: center;
+	background-color: lightgreen;
+	color: black;
+	display: none;
+	position: absolute;
+	bottom: 0;
+}
+#next{
 	display: none;
 }
 #registrationSuccessDiv{
