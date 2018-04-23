@@ -3,11 +3,6 @@ function createNew(){
     document.getElementById("regCreate").style.display = "block";
 }
 
-function joinExisting(){
-    document.getElementById("regPageOne").style.display = "none";
-    document.getElementById("regCreate").style.display = "none";
-}
-
 function createBack(){
     document.getElementById("regCreate").style.display = "none";
     document.getElementById("regPageOne").style.display = "block";

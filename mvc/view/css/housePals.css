@@ -302,3 +302,27 @@ input{
 #reportDivs{
 	position: relative;
 }
+.formHint {
+    background: #d45252;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    margin-left: 8px;
+    padding: 1px 6px;
+    z-index: 999;
+    position: relative;
+	float: right;
+}
+.formHint::before {
+    content: "\25B2";
+    color: #d45252;
+    position: absolute;
+    top: -12px;
+    left: 6px;
+}
+
+input:required:valid + .formHint {
+    background: #28921f;
+}
+input:required:valid + .formHint::before {
+    color: #28921f;
+}

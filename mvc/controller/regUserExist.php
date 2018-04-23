@@ -6,9 +6,7 @@
     // Set count values to 0.
     $countUserLogin = 0;
     $countHouseName = 0;
-
-    $foundHouse = $_SESSION['houseFound'];
-
+    
     // validate user input
     function testRegInput($data) {
         $data = trim($data);
@@ -45,44 +43,52 @@
         // Array to json encode
         $response = array();
 
-        // Statement is true if the entered username and house name have not been taken
-        if($countUserLogin == 0 && $countHouseName == 1){
-            // Insert new login details into the login table (Password is hashed)
-            $sqlLogin = "INSERT INTO login (username, password) VALUES ('$username', '$hashedPass')";
-            $resultLogin = $pdo->query($sqlLogin);
+        if($countHouseName == 1 && $countUserLogin == 0){
 
-            $response['status'] = 'success';                // Set response status
-            $response['message'] = 'This was successful';   // Set message status
+            $hashedPassword = "SELECT housePassword FROM house WHERE houseName = '$existingHouseName'";
+            $hashResult = $pdo->query($hashedPassword);
+            $hashReturn = $hashResult->fetchColumn();
 
-            // If the login and house details have been inserted in the db correctly the statement is true
-            if($resultLogin){
-                // Insert personal information into the user table
-                $sqlUser = "INSERT INTO user (firstName, surname, email, dob, profilePic, loginID, houseID) 
-                            VALUES ('$firstName', '$surname', '$email', '$dob', '../view/images/profilePic/unknown.jpg', (SELECT loginID FROM login WHERE username='$username'), 
-                            (SELECT houseID from house WHERE houseName = '$existingHouseName'))";
-                $result = $pdo->query($sqlUser);
-                if($result){
-                    $response['status'] = 'success';                // Set response status
-                    $response['message'] = 'This was successful';   // Set message status
+            if(password_verify($existingHousePass, $hashReturn)) {
+           
+                // Insert new login details into the login table (Password is hashed)
+                $sqlLogin = "INSERT INTO login (username, password) VALUES ('$username', '$hashedPass')";
+                $resultLogin = $pdo->query($sqlLogin);
+
+                // If the login details have been inserted in the db correctly the statement is true
+                if($resultLogin){
+                    // Insert personal information into the user table
+                    $sqlUser = "INSERT INTO user (firstName, surname, email, dob, profilePic, loginID, houseID) 
+                                VALUES ('$firstName', '$surname', '$email', '$dob', '../view/images/profilePic/unknown.jpg', (SELECT loginID FROM login WHERE username='$username'), 
+                                (SELECT houseID from house WHERE houseName = '$existingHouseName'))";
+                    $result = $pdo->query($sqlUser);
+                    if($result){
+                        $response['status'] = 'success';                // Set response status
+                        $response['message'] = 'User added and house joined';
+                    }else{
+                        $response['status'] = 'error';   // Set response status
+                        $response['message'] = 'Unable to add user';
+                        unset($_SESSION["currentUser"]);
+                    }
                 }else{
-                    $response['status'] = 'error';                  // Set response status
-                    $response['message'] = 'This was unsuccessful'; // Set message status
-                    unset($_SESSION["currentUser"]);
-                }
+                    $response['status'] = 'error';   // Set response status
+                    $response['message'] = 'Unable to add login details';
+                }   
             }else{
-                $response['status'] = 'error';                      // Set response status
-                $response['message'] = 'This was unsuccessful';     // Set message status
+                $response['status'] = 'error'; // Set response status
+                $response['message'] = 'Wrong password';          // Set message status
             }
-        }elseif($countUserLogin > 0){
-            $response['status'] = 'loginTaken';                    // Set response status
-            $response['message'] = 'Login Taken';             // Set message status
-        }elseif($countHouseName > 0){
-            $response['status'] = 'houseTaken';                    // Set response status
-            $response['message'] = 'House Name Taken';        // Set message status
         }else{
-            $response['status'] = 'error';                    // Set response status
-            $response['message'] = 'Unknown error';           // Set message status
+            if($countHouseName == 0){
+                $response['status'] = 'error';          // Set response status
+                $response['message'] = 'House not found';
+            }
+            if($countUserLogin != 0){
+                $response['status'] = 'error';          // Set response status
+                $response['message'] = 'Username taken';
+            }
         }
+
         // echo response as json
         echo json_encode($response);
     }

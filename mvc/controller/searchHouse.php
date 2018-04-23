@@ -3,7 +3,7 @@
 
     include '../model/housePals.php';
 
-    $_SESSION['houseFound'] = 0;
+    $_SESSION['houseFound'] = '';
 
     // Set count values to 0.
     $countHouseName = 0;
@@ -40,18 +40,18 @@
                 $response['status'] = 'houseFound';                    // Set response status
                 $response['message'] = 'House Found';                  // Set message status
 
-                $_SESSION['houseFound'] = 1;
+                $_SESSION['houseFound'] = $existingHouseName;
             }else{
                 $response['status'] = 'error';                    // Set response status
                 $response['message'] = 'Incorrect details';       // Set message status
 
-                $_SESSION['houseFound'] = 0;
+                $_SESSION['houseFound'] = '';
             }
 
         }else{
             $response['status'] = 'error';                // Set response status
             $response['message'] = 'House not found';     // Set message status
-            $_SESSION['houseFound'] = 0;
+            $_SESSION['houseFound'] = '';
         }
 
         // echo response as json

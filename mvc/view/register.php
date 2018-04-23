@@ -27,11 +27,13 @@
                     <div id="regCreate">
                         <div class="loginInputs">
                             <span class="inputLabel">House Name</span>
-                            <input type="text" id="newHouseName" name="newHouseName">
+                            <input type="text" id="newHouseName" name="newHouseName" pattern="[A-Za-z]{2,32}" required>
+                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Password</span>
-                            <input type="password" id="newHousePassword" name="newHousePassword">
+                            <input type="password" id="newHousePassword" name="newHousePassword" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
                         </div>
                         <div class="butts">
                             <input class="buttonText" type="button" value="Back" onclick="createBack()">
@@ -42,23 +44,28 @@
                     <div id="regPageFour">
                         <div class="loginInputs">
                             <span class="inputLabel">Username</span>
-                            <input type="text" id="username" name="username">
+                            <input type="text" id="username" name="username" pattern="^[a-z0-9]{3,15}$" required>
+                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Password</span>
-                            <input type="password" id="password" name="password">
+                            <input type="password" id="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">First name</span>
-                            <input type="text" id="firstName" name="firstName">
+                            <input type="text" id="firstName" name="firstName" pattern="[A-Za-z]{2,32}" required>
+                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Surname</span>
-                            <input type="text" id="surname" name="surname">
+                            <input type="text" id="surname" name="surname" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
+                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Email</span>
                             <input type="text" id="email" name="email">
+                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">DOB</span>

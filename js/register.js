@@ -2,9 +2,6 @@ function submit() {
     $("#submit").click(function(e) {
         
         // Set all variables
-        var existingHouseName = $('#existingHouseName').val();
-        var existingHousePass = $('#existingHousePass').val();
-
         var newHouseName = $('#newHouseName').val();
         var newHousePassword = $('#newHousePassword').val();
 
@@ -23,8 +20,6 @@ function submit() {
                 datatype: 'json',
                 url: '../controller/regUser.php',
                 data: {
-                    existingHousePass: existingHousePass,
-                    existingHouseName: existingHouseName,
                     newHouseName: newHouseName,
                     newHousePassword: newHousePassword,
                     username: username,

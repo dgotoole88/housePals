@@ -16,9 +16,6 @@
     }
 
     if(isset($_POST) & !empty($_POST)){
-        // Existing house details
-      //  $existingHouseName = filter_var(testRegInput($_POST['existingHouseName']), FILTER_SANITIZE_STRING);
-      //  $existingHousePass = filter_var(testRegInput($_POST['existingHousePass']), FILTER_SANITIZE_STRING);
         // New house details
         $houseName = filter_var(testRegInput($_POST['newHouseName']), FILTER_SANITIZE_STRING);
         $housePass = filter_var(testRegInput($_POST['newHousePassword']), FILTER_SANITIZE_STRING);

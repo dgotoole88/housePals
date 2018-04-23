@@ -1,5 +1,5 @@
 function submit() {
-    $("#submit").click(function(e) {
+    $("#submitJoin").click(function(e) {
         
         // Set all variables
         var existingHouseName = $('#existingHouseName').val();
@@ -17,8 +17,8 @@ function submit() {
                 datatype: 'json',
                 url: '../controller/regUserExist.php',
                 data: {
-                    existingHousePass: existingHousePass,
                     existingHouseName: existingHouseName,
+                    existingHousePass: existingHousePass,
                     username: username,
                     password: password,
                     firstName: firstName,
@@ -29,17 +29,14 @@ function submit() {
                 success: function(data) {
                     console.log(data);
                     if (data.status == 'success') {
-                        alert("Success");
+                        alert(data.message);
                     }
                     if (data.status == 'error') {
-                        alert("Error");
+                        alert(data.message);
                     }
                 },
-                error: function() {
-                    console.log("Signup was unsuccessful");
-                    if (data.status == 'error') {
-                        alert("Bugger");
-                    }
+                error: function(data) {
+                    alert("AJAX error");
                 }
             });
     });
