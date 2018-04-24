@@ -18,38 +18,38 @@
                     <div id="join">
                         <div class="loginInputs">
                             <span class="inputLabel">House Name</span>
-                            <input type="text" id="existingHouseName" name="existingHouseName" pattern="[A-Za-z]{3,20}" required>
-                            <div class="formHint">3 - 20 letters or numbers.</div>
+                            <input type="text" id="existingHouseName" name="existingHouseName" pattern="[A-Za-z0-9]{3,15}" required>
+                            <div class="formHint">* 3 - 15 letters or numbers.</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">House Pass</span>
                             <input type="password" id="existingHousePass" name="existingHousePass" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
-                            <div class="formHint">Upper case, lower case, and min 8 chars</div>
+                            <div class="formHint">* Min 8 chars. Upper case, lower case & number</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Username</span>
                             <input type="text" id="username" name="username" pattern="^[a-z0-9]{3,15}$" required>
-                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
+                            <div class="formHint">* 3 - 15 Letters or Numbers. No capitals</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Password</span>
                             <input type="password" id="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
-                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
+                            <div class="formHint">* Min 8 chars. Upper case, lower case & number</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">First name</span>
                             <input type="text" id="firstName" name="firstName" pattern="[A-Za-z]{2,32}" required>
-                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
+                            <div class="formHint">* Upper case and lower case only.</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Surname</span>
                             <input type="text" id="surname" name="surname" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
-                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
+                            <div class="formHint">* Upper case and lower case.</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Email</span>
                             <input type="email" id="email" name="email">
-                            <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
+                            <div class="formHint">* Example: johnsmith@gmail.com</div>
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">DOB</span>
