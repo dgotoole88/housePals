@@ -48,7 +48,7 @@
                         </div>
                         <div class="loginInputs">
                             <span class="inputLabel">Email</span>
-                            <input type="email" id="email" name="email">
+                            <input type="email" id="email" required>
                             <div class="formHint">* Example: johnsmith@gmail.com</div>
                         </div>
                         <div class="loginInputs">
@@ -72,8 +72,17 @@
                 <div id="regoError">
                     <h2 id="responseText">Error, Try Again</h2>
                 </div>
-                <div id="regoError">
-                    <h2 id="responseText">House details incorrect</h2>
+                <div id="houseRegoError">
+                    <h2 id="responseText">House not found</h2>
+                </div>
+                <div id="emptyInput">
+                    <h2 id="responseText">Please answer every question</h2>
+                </div>
+                <div id="incorrectInfo">
+                    <h2 id="responseText">The information you entered is incorrect</h2>
+                </div>
+                <div id="wrongHousePass">
+                    <h2 id="responseText">House username or password is incorrect</h2>
                 </div>
             </div>
         </div>
