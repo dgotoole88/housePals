@@ -54,9 +54,6 @@
             $sqlHouse = "INSERT INTO house (houseName, housePassword) VALUES ('$houseName', '$hashedHousePass')";
             $resultHouse = $pdo->query($sqlHouse);
 
-            $response['status'] = 'success';                // Set response status
-            $response['message'] = 'This was successful';   // Set message status
-
             // If the login and house details have been inserted in the db correctly the statement is true
             if($resultLogin && $resultHouse){
                 // Insert personal information into the user table
@@ -77,10 +74,10 @@
                 $response['message'] = 'This was unsuccessful';     // Set message status
             }
         }elseif($countUserLogin > 0){
-            $response['status'] = 'loginTaken';                    // Set response status
+            $response['status'] = 'error';                    // Set response status
             $response['message'] = 'Login Taken';             // Set message status
         }elseif($countHouseName > 0){
-            $response['status'] = 'houseTaken';                    // Set response status
+            $response['status'] = 'error';                    // Set response status
             $response['message'] = 'House Name Taken';        // Set message status
         }else{
             $response['status'] = 'error';                    // Set response status

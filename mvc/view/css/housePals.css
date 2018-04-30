@@ -238,13 +238,6 @@ input{
 	justify-content: center;
 	padding: 1em;
 }
-#regPageFour{
-	display: none;
-}
-#regCreate{
-	display: none;
-
-}
 #regExist{
 	display: none;
 }
