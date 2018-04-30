@@ -78,6 +78,7 @@ body{
 	border-top: thin solid black;
 	border-bottom: thin solid black;
 	background-color: #3D9970;
+	text-align: center;
 }
 #heading{
 	font-size: 2.5em;

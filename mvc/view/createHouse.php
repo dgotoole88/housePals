@@ -86,6 +86,6 @@
                 </div>
             </div>
         </div>
-        <footer><?php include "footer.php"; ?></footer>
+        <footer><?php include "regFooter.php"; ?></footer>
     </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php
-            include "../controller/sessionStart.php";
+            include "controller/sessionStart.php";
         ?>
     </head>
     <body>

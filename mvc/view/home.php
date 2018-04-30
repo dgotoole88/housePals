@@ -2,7 +2,6 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/housePals.css">
-        <script src="../js/housePals.js"></script>
         <?php
             include "header.php";
         ?>
