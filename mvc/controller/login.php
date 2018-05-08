@@ -1,9 +1,8 @@
 <?php
-    include 'model/housePals.php';
+    header("Content-type: application/json");
 
-    if(!isset($_SESSION)){
-        session_start();
-    }
+    include 'model/housePals.php';
+    include 'sessionStart.php';
 
     $_SESSION['count'] = 0;
     $_SESSION['currentUser'] = '';
@@ -19,6 +18,8 @@
         $username = filter_var(testInput($_POST['username']), FILTER_SANITIZE_STRING);
         $password = filter_var(testInput($_POST['password']), FILTER_SANITIZE_STRING);
 
+        $response = array();
+
         $checkUsername = "SELECT COUNT(*) FROM login WHERE username='$username'";
         $result = $pdo->query($checkUsername);
         $userResult = $result->fetchColumn();
@@ -32,27 +33,17 @@
                 $_SESSION['count'] = 1;
                 $_SESSION['currentUser'] = $username;
 
-                if($_SESSION['count'] == 1){
-                    ?>
-                        <script type="text/javascript">
-                            window.location="view/home.php";
-                        </script>
-                    <?php
-                }
+                $response['status'] = 'success';               // Set response status
+                $response['message'] = 'successful login';     // Set message status
             }else{
-                ?>
-                    <script>
-                        document.getElementById("errorModal").style.display = 'block';
-                    </script>
-                <?php
+                $response['status'] = 'error';                              // Set response status
+                $response['message'] = 'Username or password incorrect';    // Set message status
             }
         }else{
-            ?>
-                <script>
-                    document.getElementById("errorModal").style.display = 'block';
-                </script>
-            <?php
+            $response['status'] = 'error';                              // Set response status
+            $response['message'] = 'User not found';                    // Set message status
         }
-      }else{
-      }
+
+        echo json_encode($response);
+    }
 ?>
