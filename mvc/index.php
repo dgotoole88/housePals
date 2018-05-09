@@ -17,26 +17,23 @@
                     <h2 class="loginRegister">Login</h2>
                     <div class="loginInputs">
                         <span class="inputLabel">Username</span>
-                        <input type="text" id="username" required>
+                        <input type="text" id="username" pattern="^[a-z0-9]{3,15}$" required>
                     </div>
                     <div class="loginInputs">
                         <span class="inputLabel">Password</span>
-                        <input type="password" value="Trunks321123" id="password" required>
+                        <input type="password" value="Trunks321123" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     </div>
                     <div id="submitButton">
                         <button id="submit" class="buttonText" type="button">Login</button>
                     </div>
                 </div>
-                <div id="errorModal">
-                    <h2 id="errorText">Incorrect username or password</h2>
-                </div>
-                <div id="incorrectInfo">
-                    <h2 id="responseText">The information you entered is incorrect</h2>
-                </div>
-                <div id="emptyInput">
-                    <h2 id="responseText">Please answer every question</h2>
-                </div>
             </form>
+            <div id="errorModal">
+                <h2 class="responseText">Incorrect username or password</h2>
+            </div>
+            <div id="incorrectInfo">
+                <h2 class="responseText">The information you entered is incorrect</h2>
+            </div>
         </div>
         <footer><?php include "view/loginFooter.php"; ?></footer>
     </body>

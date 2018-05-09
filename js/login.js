@@ -20,7 +20,7 @@ function submit() {
                     checkUser(username, password);
                 }
         }else{
-            document.getElementById("emptyInput").style.display = 'block';
+            document.getElementById("incorrectInfo").style.display = 'block';
         }
 
         function checkUser(username, password){

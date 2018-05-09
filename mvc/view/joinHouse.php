@@ -64,25 +64,25 @@
             </form>
             <div id="reportDivs">
                 <div id="registrationSuccessDiv">
-                    <h2 id="responseText">Successfully Registered</h2>
+                    <h2 class="responseText">Successfully Registered</h2>
                 </div>
                 <div id="regoTakenLogin">
-                    <h2 id="responseText">Username Taken</h2>
+                    <h2 class="responseText">Username Taken</h2>
                 </div>
                 <div id="regoError">
-                    <h2 id="responseText">Error, Try Again</h2>
+                    <h2 class="responseText">Error, Try Again</h2>
                 </div>
                 <div id="houseRegoError">
-                    <h2 id="responseText">House not found</h2>
+                    <h2 class="responseText">House not found</h2>
                 </div>
                 <div id="emptyInput">
-                    <h2 id="responseText">Please answer every question</h2>
+                    <h2 class="responseText">Please answer every question</h2>
                 </div>
                 <div id="incorrectInfo">
-                    <h2 id="responseText">The information you entered is incorrect</h2>
+                    <h2 class="responseText">The information you entered is incorrect</h2>
                 </div>
                 <div id="wrongHousePass">
-                    <h2 id="responseText">House username or password is incorrect</h2>
+                    <h2 class="responseText">House username or password is incorrect</h2>
                 </div>
             </div>
         </div>

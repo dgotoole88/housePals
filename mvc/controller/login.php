@@ -1,7 +1,7 @@
 <?php
     header("Content-type: application/json");
 
-    include 'model/housePals.php';
+    include '../model/housePals.php';
     include 'sessionStart.php';
 
     $_SESSION['count'] = 0;

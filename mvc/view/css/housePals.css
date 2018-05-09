@@ -213,7 +213,7 @@ input{
 	color: white;
 }
 #errorModal{
-	background-color: red;
+	background-color: lightcoral;
 	opacity: .7;
 	text-align: center;
 	display: none;
@@ -300,13 +300,9 @@ input{
 	bottom: 0;
 }
 #emptyInput{
-	width: 100%;
-	text-align: center;
 	background-color: lightcoral;
-	color: black;
+	text-align: center;
 	display: none;
-	position: absolute;
-	bottom: 0;
 }
 #incorrectInfo{
 	width: 100%;
@@ -314,8 +310,6 @@ input{
 	background-color: lightcoral;
 	color: black;
 	display: none;
-	position: absolute;
-	bottom: 0;
 }
 #wrongHousePass{
 	width: 100%;
@@ -326,7 +320,7 @@ input{
 	position: absolute;
 	bottom: 0;
 }
-#responseText{
+.responseText{
 	font-family: "OstrichSansRounded-Medium";
 	font-size: 1.5em;
 }
